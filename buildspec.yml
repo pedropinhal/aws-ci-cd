@@ -7,4 +7,4 @@ phases:
       - dotnet build
 artifacts:
   files:
-    - bin/Debug/netcoreapp2.2/*
+    - bin/Debug/netcoreapp2.1/*
