@@ -1,10 +1,14 @@
 version: 0.2
 
 phases:
+  pre_build:
+    commands:
+      - dotnet restore aws-ci-cd.csproj
   build:
     commands:
-      - dotnet restore
-      - dotnet build
+      - dotnet publish -c release -o ./build_output aws-ci-cd.csproj
 artifacts:
   files:
-    - bin/Debug/netcoreapp2.1/*
+    - build_output/**/*
+    - scripts/**/*
+    - appspec.yml
