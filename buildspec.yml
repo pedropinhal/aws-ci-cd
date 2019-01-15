@@ -11,6 +11,6 @@ phases:
       - dotnet publish -c release -o ./test_output tests/tests.csproj
 artifacts:
   files:
-    - build_output/**/*
+    - src/build_output/**/*
     - scripts/**/*
     - appspec.yml
