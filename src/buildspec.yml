@@ -3,10 +3,12 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - dotnet restore aws-ci-cd.csproj
+      - dotnet restore src/aws-ci-cd.csproj
+      - dotnet restore tests/tests.csproj
   build:
     commands:
-      - dotnet publish -c release -o ./build_output aws-ci-cd.csproj
+      - dotnet publish -c release -o ./build_output src/aws-ci-cd.csproj
+      - dotnet publish -c release -o ./test_output tests/tests.csproj
 artifacts:
   files:
     - build_output/**/*
